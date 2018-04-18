@@ -1,0 +1,25 @@
+<ion-view view-title="Iniciar Produção">
+  <ioncontent ng-controller="AppCtrl">
+    </br></br></br>
+
+    <label class="item item-input">
+      <input type="number" placeholder="Pedido 01" ng-model="producao.pedido01">
+    </label>
+
+    <label class="item item-input">
+      <input type="number" placeholder="Pedido 02" ng-model="producao.pedido02">
+    </label>
+
+    <label class="item item-input">
+      <input type="number" placeholder="Pedido 03" ng-model="producao.pedido03">
+    </label>
+
+    <button class="button button-positive button-block" ng-click="consultaProducao()"> Consultar produção </button>
+
+    <ion-list>
+      <ion-item ng-repeat="producao in producoes" class="item-text-wrap">
+        Status do Pedido:<br><br>  {{ producao.fn_gera_producao }}<br>
+      </ion-item>
+    </ion-list>
+  </ion-content>         
+</ion-view>

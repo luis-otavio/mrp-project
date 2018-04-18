@@ -1,0 +1,28 @@
+ <ion-view view-title="Cadastrar novo cliente">
+  <ioncontent ng-controller="AppCtrl">
+    </br></br></br>
+        
+    <label class="item item-input">
+      <input type="number" placeholder="ID Cliente" ng-model="cliente.id_cliente">
+    </label>
+
+    <label class="item item-input">
+      <input type="text" placeholder="Nome do Cliente" ng-model="cliente.nomeCliente">
+    </label>
+
+    <label class="item item-input">
+      <input type="number" placeholder="CNPJ" ng-model="cliente.CNPJ">
+    </label>
+
+    <label class="item item-input">
+      <input type="number" placeholder="Telefone" ng-model="cliente.telefone">
+    </label>
+
+    <label class="item item-input">
+      <input type="text" placeholder="Endereco" ng-model="cliente.endereco">
+    </label>
+
+    <button class="button button-positive button-block" ng-click="insereCliente()"> Cadastrar Cliente </button>
+
+  </ion-content>         
+</ion-view>

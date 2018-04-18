@@ -1,0 +1,20 @@
+ <ion-view view-title="Cadastrar novo produto">
+  <ioncontent ng-controller="AppCtrl">
+    </br></br></br>
+        
+    <label class="item item-input">
+      <input type="number" placeholder="ID Produto" ng-model="produto.id_produto">
+    </label>
+
+    <label class="item item-input">
+      <input type="text" placeholder="Descricao" ng-model="produto.descricaoproduto">
+    </label>
+
+    <label class="item item-input">
+      <input type="number" placeholder="quantidade" ng-model="produto.quantidade">
+    </label>           
+
+    <button class="button button-positive button-block" ng-click="insereEstoque()">Inserir Produto no estoque </button>
+
+  </ion-content>         
+</ion-view>

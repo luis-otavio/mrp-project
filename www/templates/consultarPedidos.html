@@ -1,0 +1,70 @@
+ <ion-view view-title="Consultar Pedidos">
+  <ioncontent ng-controller="AppCtrl">
+    </br></br></br>
+      <button class="button button-positive button-block" ng-click="consultaPedido()"> Consultar Pedidos </button>
+        <ion-list>
+          <ion-item ng-repeat="pedido in pedidos" class="item-text-wrap">
+           
+            Código do Pedido:  {{ pedido.id_pedido }}<br>
+            Cliente:           {{ pedido.id_cliente}}<br>
+            Bojo Vermelho:     {{ pedido.vermelho }}<br>
+            Bojo Preto:        {{ pedido.preto }}<br>
+            Bojo Branco:       {{ pedido.branco }}<br>
+
+            <ion-option-button class="button-dark" ng-click="openModalPedido(pedido)">Alterar</ion-option-button>
+            <ion-option-button class="button-assertive" ng-click="openModalPedido(pedido)">Excluir</ion-option-button>
+            <ion-option-button class="button-dark" ng-click="openModalPedido(pedido)">Gastos</ion-option-button>
+          </ion-item>
+        </ion-list>
+  </ion-content>         
+</ion-view>
+
+
+<!-- script do modal -->
+
+<script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <button class="button button-icon ion-ios-close-empty" ng-click="closeModal()"></button>
+
+        <div class="buttons">
+          <h1 class="title">Atualizar Pedido</h1>
+        </div>
+
+    </ion-header-bar>
+  <ion-content>
+         
+  <label class="item item-input">
+    <input type="number" placeholder="Id Pedido" ng-model="pedido.id_pedido">
+  </label>
+
+  <label class="item item-input">
+    <input type="text" placeholder="Cliente" ng-model="pedido.id_cliente">
+  </label>
+
+  <label class="item item-input">
+    <input type="number" placeholder="Bojo Vermelho" ng-model="pedido.vermelho">
+  </label>
+
+  <label class="item item-input">
+    <input type="number" placeholder="Bojo Preto" ng-model="pedido.preto">
+  </label>
+
+  <label class="item item-input">
+    <input type="number" placeholder="Bojo Branco" ng-model="pedido.branco">
+  </label>
+
+  <button class="button button-dark button-block" ng-click="atualizaPedido()">Atualizar</button>
+
+  <button class="button button-assertive button-block" ng-click="deletePedido(pedido)">Deletar</button> 
+
+  <button class="button button-dark button-block" ng-click="consultaGastos()">Consultar Gastos</button>
+
+  <ion-list>
+    <ion-item ng-repeat="pedido in pedidos" class="item-text-wrap">
+      {{ pedido.fn_gera_gastos }}<br>
+    </ion-item>
+  </ion-list>    
+ </ion-content>
+</ion-modal-view>
+</script>

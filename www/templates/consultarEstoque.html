@@ -1,0 +1,50 @@
+<ion-view view-title="Consultar Estoque">
+  <ioncontent ng-controller="AppCtrl">
+  </br></br></br>
+
+    <button class="button button-positive button-block" ng-click="consultaEstoque()"> Consultar Estoque </button>
+      <ion-list>
+        <ion-item ng-repeat="produto in produtos" class="item-text-wrap">
+          Código: {{ produto.id_produto }}<br>
+          Descrição: {{ produto.descricaoproduto }}<br>
+          Quantidade: {{ produto.quantidade }}<br>
+
+          <ion-option-button class="button-dark" ng-click="openModalEstoque(produto)">Alterar</ion-option-button>
+          <ion-option-button class="button-assertive" ng-click="openModalEstoque(produto)">Excluir</ion-option-button>
+        </ion-item>
+      </ion-list>
+
+  </ion-content>         
+</ion-view>
+
+
+<script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <button class="button button-icon ion-ios-close-empty" ng-click="closeModal()"></button>
+
+        <div class="buttons">
+          <h1 class="title">Atualizar Estoque</h1>
+        </div>
+    </ion-header-bar>
+
+    <ion-content>         
+      <label class="item item-input">
+        <input type="number" placeholder="Id Produto (nao alterar)" ng-model="produto.id_produto">
+      </label>
+
+      <label class="item item-input">
+        <input type="text" placeholder="Descricao" ng-model="produto.descricaoproduto">
+      </label>
+
+      <label class="item item-input">
+        <input type="number" placeholder="Quantidade" ng-model="produto.quantidade">
+      </label>
+
+      <button class="button button-dark button-block" ng-click="atualizaEstoque()"> Atualizar</button>
+
+      <button class="button button-assertive button-block" ng-click="deleteEstoque(produto)"> Deletar</button>
+
+    </ion-content>
+  </ion-modal-view>
+</script>

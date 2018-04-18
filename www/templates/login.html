@@ -1,0 +1,45 @@
+<ion-modal-view id="p1">
+  <ion-header-bar>
+    <h1 class="title">Nova despesa </h1>
+
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+
+  </ion-header-bar>
+
+  <ion-content>
+    <ioncontent>
+    <br/><br/><br/><br/>
+
+      <div class = "card" border>
+        <ionitem class = "item-text-wrap">
+          <ionlist>
+
+            <label class = "item item-input">
+              <input type = "Text" placeholder = "Despesa" name="despesa" ng-model="despesa">
+            </label>
+
+            <label class = "item item-input">
+              <input type = "Number" placeholder = "Valor (R$)" name="valor" ng-model="valor">
+            </label>
+
+          </ionlist>
+        </ionitem>            
+      </div>
+
+      <div>
+        <ionitem class = "item-text-wrap">
+          <button class="button button-positive button-block" ng-click="newFriend(despesa,valor)"> Inserir despesa </button> 
+          <button class="button button-stable button-block" ng-click="closeLogin()">Cancel</button>
+        </ionitem>
+      </div>
+    </ioncontent>                
+  </ion-content>
+</ion-modal-view>
+
+
+
+
+
+

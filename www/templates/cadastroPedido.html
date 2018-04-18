@@ -1,0 +1,29 @@
+<ion-view view-title="Cadastrar Pedido" >
+  <ioncontent ng-controller="AppCtrl">
+        </br></br></br>
+    
+        <label class="item item-input">
+            <input type="number" placeholder="Id do Pedido" ng-model="pedido.id_pedido">
+        </label>
+
+        <label class="item item-input">
+            <input type="number" placeholder="Id do Cliente" ng-model="pedido.id_cliente">
+        </label>
+
+        <label class="item item-input">
+            <input type="number" placeholder="Vermelho" ng-model="pedido.vermelho">
+        </label>
+
+        <label class="item item-input">
+            <input type="number" placeholder="Preto" ng-model="pedido.preto">
+        </label>
+
+        <label class="item item-input">
+            <input type="number" placeholder="Branco" ng-model="pedido.branco">
+        </label>
+
+        <button class="button button-positive button-block" ng-click="inserePedido()"> Inserir Pedido </button>
+  
+    </ioncontent>                
+</ion-view>
+
